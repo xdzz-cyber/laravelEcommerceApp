@@ -18,7 +18,7 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <ul class="navbar navbar-nav navbar-right">
-        <li><a href="#">Cart(0)</a></li>
+        <li><a href="#" class="text-decoration-none">Cart(0)</a></li>
       </ul>
     </div>
   </div>

@@ -22,4 +22,6 @@ Route::get("/shop/login", [ClientsController::class,"loginPage"]);
 
 Route::get("/shop", [ProductController::class, "index"]);
 
+Route::get("/shop/detail/{id}", [ProductController::class, "detailPage"]);
+
 Route::post("/shop/login", [ClientsController::class,"loginResult"]);
