@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class ClientsController extends Controller
 {
@@ -19,5 +20,10 @@ class ClientsController extends Controller
         }
         $req->session()->put("client",$client);
         return redirect("/shop");
+    }
+
+    public function logout(){
+        Session::forget("client");
+        return redirect("/shop/login");
     }
 }

@@ -24,4 +24,8 @@ Route::get("/shop", [ProductController::class, "index"]);
 
 Route::get("/shop/detail/{id}", [ProductController::class, "detailPage"]);
 
+Route::get("/shop/logout", [ClientsController::class, "logout"]);
+
 Route::post("/shop/login", [ClientsController::class,"loginResult"]);
+
+Route::post("/shop/addToCart", [ProductController::class, "addToCart"]);
