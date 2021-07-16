@@ -26,6 +26,12 @@ Route::get("/shop/detail/{id}", [ProductController::class, "detailPage"]);
 
 Route::get("/shop/logout", [ClientsController::class, "logout"]);
 
+Route::get("/shop/cartItemsList", [ProductController::class, "cartItemsList"]);
+
+Route::get("/shop/removeCartListItem/{cartItemId}", [ProductController::class, "removeCartListItem"]);
+
+Route::get("/shop/makeOrder", [ProductController::class, "makeOrder"]);
+
 Route::post("/shop/login", [ClientsController::class,"loginResult"]);
 
 Route::post("/shop/addToCart", [ProductController::class, "addToCart"]);

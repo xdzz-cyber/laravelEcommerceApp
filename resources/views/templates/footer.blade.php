@@ -1,8 +1,8 @@
 <footer class="fixed-bottom bg-light text-center text-lg-start footer mt-auto bg-light">
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+  <div class="copyrightContainer text-center p-3">
     © 2021 Copyright:
-    <a class="text-dark text-decoration-none" href="#">Created for purpose</a>
+    <a class="text-dark text-decoration-none" href="#">Created on purpose</a>
   </div>
   <!-- Copyright -->
 </footer>

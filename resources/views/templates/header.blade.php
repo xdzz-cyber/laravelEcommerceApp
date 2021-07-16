@@ -26,7 +26,7 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <ul class="navbar navbar-nav navbar-right">
-        <li><a href="#" class="text-decoration-none">Cart({{$totalCartItemsCount}})</a></li>
+        <li><a href="/shop/cartItemsList" class="text-decoration-none">Cart({{$totalCartItemsCount}})</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{$clientName}}
