@@ -30,7 +30,7 @@
                 @endforeach
                 @endif
             </div>
-            <a class="btn btn-success my-3" href="/shop/makeOrder">Make order</a>
+            <!-- <a class="btn btn-success my-3" href="/shop/makeOrder">Make order</a> -->
         </div>
     </div>
 @endsection

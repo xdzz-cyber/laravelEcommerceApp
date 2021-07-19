@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get("/shop/login", [ClientsController::class,"loginPage"]);
 
+Route::get("/shop/register", [ClientsController::class, "registerPage"]);
+
 Route::get("/shop", [ProductController::class, "index"]);
 
 Route::get("/shop/detail/{id}", [ProductController::class, "detailPage"]);
@@ -32,6 +34,12 @@ Route::get("/shop/removeCartListItem/{cartItemId}", [ProductController::class, "
 
 Route::get("/shop/makeOrder", [ProductController::class, "makeOrder"]);
 
+Route::get("/shop/clientOrderItemsListPage", [ProductController::class, "clientOrderItemsListPage"]);
+
 Route::post("/shop/login", [ClientsController::class,"loginResult"]);
 
 Route::post("/shop/addToCart", [ProductController::class, "addToCart"]);
+
+Route::post("/shop/makeOrderResult", [ProductController::class, "makeOrderResult"]);
+
+Route::post("/shop/registerResult", [ClientsController::class, "registerResult"]);

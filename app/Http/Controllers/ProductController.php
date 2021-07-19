@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Cart;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use App\Models\Order;
 
 class ProductController extends Controller
 {
@@ -61,5 +62,32 @@ class ProductController extends Controller
         ->sum("products.price");
         
         return view("makeOrder", ["sumOfCartProducts" => $sumOfCartProducts]);
+    }
+
+    public function makeOrderResult(Request $req){
+        $clientId = Session::get("client")['id'];
+        $cartItemsRelatedToClient = Cart::where("client_id", $clientId)->get();
+        foreach ($cartItemsRelatedToClient as $cartItem) {
+            $order = new Order();
+            $order->product_id = $cartItem['product_id'];
+            $order->client_id = $clientId;
+            $order->status = "pending";
+            $order->payment_method = $req->input()['paymentMethod'];
+            $order->payment_status = "pending";
+            $order->address = $req->input()['address'];
+            $order->save();
+            Cart::where("client_id", $clientId)->delete();
+        }
+        return redirect("/shop");
+    }
+
+    public function clientOrderItemsListPage(){
+        $clientId = Session::get("client")['id'];
+        $clientOrderItems = DB::table("orders")
+        ->join("products", "orders.product_id","=","products.id")
+        ->where("orders.client_id",$clientId)
+        ->get();
+
+        return view("clientOrderItemsPage", ["clientOrderItems"=>$clientOrderItems]);
     }
 }

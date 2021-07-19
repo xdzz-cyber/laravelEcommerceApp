@@ -18,7 +18,7 @@
           <a class="nav-link active" aria-current="page" href="/shop">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Orders</a>
+          <a class="nav-link active" aria-current="page" href="/shop/clientOrderItemsListPage">Orders</a>
         </li>
       </ul>
       <form class="d-flex mx-5">
@@ -36,7 +36,7 @@
             <li><a class="dropdown-item" href="/shop/logout">Logout</a></li>
             @else
             <li><a class="dropdown-item" href="/shop/login">Login</a></li>
-            <li><a class="dropdown-item" href="#">Register</a></li>
+            <li><a class="dropdown-item" href="/shop/register">Register</a></li>
             @endif
           </ul>
         </li>

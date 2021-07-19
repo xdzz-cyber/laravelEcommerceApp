@@ -25,19 +25,20 @@
         </table>
 
         <div>
-            <form method="post" action="/">
+            <form method="post" action="/shop/makeOrderResult">
+                @csrf
                 <div class="mb-3">
-                    <textarea class="form-control" placeholder="enter your address" rows="3"></textarea>
+                    <textarea class="form-control" name="address" placeholder="enter your address" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <div class="form-check my-3 mx-2">
-                        <input class="form-check-input" type="radio" name="paymentMethod">
+                        <input class="form-check-input" value="online" type="radio" name="paymentMethod">
                         <label class="form-check-label" for="flexRadioDefault1">
                             Online
                         </label>
                     </div>
                     <div class="form-check my-3 mx-2">
-                        <input class="form-check-input" type="radio" name="paymentMethod" checked>
+                        <input class="form-check-input" value="onDelivery" type="radio" name="paymentMethod" checked>
                         <label class="form-check-label" for="flexRadioDefault2">
                             On delivery
                         </label>
